@@ -4,7 +4,7 @@
  */
 
 const FRAME_COUNT = 240;
-const INITIAL_BUFFER_THRESHOLD = 30; // Quick unlock threshold for instant fluidity
+const INITIAL_BUFFER_THRESHOLD = 1; // Instant unlock: show portfolio immediately!
 
 // DOM Elements
 const canvas = document.getElementById('hero-canvas');
@@ -94,8 +94,21 @@ function getLoadedImage(index) {
   return null;
 }
 
+// Instant unlock function
+function unlockExperience() {
+  if (isUnlocked) return;
+  isUnlocked = true;
+  if (preloader) {
+    preloader.classList.add('loaded');
+  }
+  updateScrollProgress();
+}
+
 // Preloader routine with progressive concurrent downloading
 function preloadFrames() {
+  // Safety timeout: Never hold user back, show portfolio immediately within 250ms
+  setTimeout(unlockExperience, 250);
+
   // Load Frame 0 first with highest priority
   const firstImg = new Image();
   firstImg.src = getFramePath(0);
@@ -104,9 +117,11 @@ function preloadFrames() {
     loadedCount++;
     updateProgress();
     drawFrame(0, true);
+    unlockExperience();
     loadRemainingFrames();
   };
   firstImg.onerror = () => {
+    unlockExperience();
     loadRemainingFrames();
   };
 }
@@ -117,8 +132,8 @@ function loadRemainingFrames() {
     queue.push(i);
   }
 
-  // Preload in batches of 10 concurrent requests
-  const CONCURRENT_DOWNLOADS = 10;
+  // Preload in batches of 16 concurrent requests for maximum HTTP/2 throughput
+  const CONCURRENT_DOWNLOADS = 16;
   let activeDownloads = 0;
 
   function loadNext() {
@@ -152,13 +167,9 @@ function updateProgress() {
   if (loadPercentage) loadPercentage.textContent = percentage;
   if (progressBar) progressBar.style.width = `${percentage}%`;
 
-  // Unlock experience as soon as initial buffer is ready
-  if (!isUnlocked && (loadedCount >= INITIAL_BUFFER_THRESHOLD || loadedCount === FRAME_COUNT)) {
-    isUnlocked = true;
-    setTimeout(() => {
-      if (preloader) preloader.classList.add('loaded');
-      updateScrollProgress();
-    }, 250);
+  // Instant unlock as soon as first frame is ready
+  if (!isUnlocked && loadedCount >= 1) {
+    unlockExperience();
   }
 }
 
