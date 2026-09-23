@@ -1,0 +1,9 @@
+# Ignore heavy archives and local utilities
+video_frames_30fps_png.zip
+*.zip
+serve.js
+*.png.zip
+Screenshot*.*
+.git
+.gitignore
+node_modules

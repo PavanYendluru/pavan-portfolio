@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pavan Yendluru — Full Stack Web Developer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Preloader Screen -->
+  <div id="preloader" class="preloader">
+    <div class="loader-content">
+      <div class="loader-counter"><span id="load-percentage">0</span>%</div>
+      <div class="progress-track">
+        <div id="progress-bar" class="progress-fill"></div>
+      </div>
+      <p class="loader-text">Loading Pavan Yendluru's Portfolio...</p>
+    </div>
+  </div>
+
+  <!-- Background Animated Video Canvas -->
+  <canvas id="hero-canvas"></canvas>
+
+  <!-- Sticky Top Navigation Bar -->
+  <header class="top-nav" id="top-nav">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo">
+        <span class="sparkle-icon">✦</span> Pavan Yendluru
+      </a>
+      <nav class="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#workflow" class="nav-link">Workflow</a>
+        <a href="#contact-card" class="cta-pill-btn">Get in touch!</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Flow -->
+  <main class="page-content">
+
+    <!-- 1. HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-sparkle hero-sparkle-1">✦</div>
+      <div class="hero-sparkle hero-sparkle-2">✦</div>
+
+      <!-- Hero Header Typography & Socials -->
+      <div class="hero-header-row">
+        <div class="hero-title-group">
+          <h1 class="hero-title">PORTFOLIO</h1>
+          <div class="hero-title-outline">PORTFOLIO</div>
+          <div class="hero-title-outline">PORTFOLIO</div>
+        </div>
+
+        <div class="hero-socials">
+          <div class="social-item">
+            <span class="social-prefix">Role:</span> Full Stack Developer
+          </div>
+          <a href="https://github.com/PavanYendluru" target="_blank" rel="noreferrer" class="social-item">
+            <span class="social-prefix">GH:</span> github.com/PavanYendluru
+          </a>
+          <div class="social-item">
+            <span class="social-prefix">Edu:</span> B.Tech AI & ML (2022–2026)
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Middle Row / Summary Quote -->
+      <div class="hero-middle-row">
+        <div class="quote-card">
+          <p>B.Tech Artificial Intelligence & Machine Learning developer focused on building modern web applications, robust backend architectures, and responsive React interfaces.</p>
+        </div>
+      </div>
+
+      <!-- Circular "Scroll down" badge -->
+      <div class="scroll-badge-wrapper">
+        <a href="#about" class="scroll-down-badge">
+          <span>Scroll<br>down</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 2. "HELLO, I'M PAVAN !" ABOUT SECTION -->
+    <section class="about-section" id="about">
+      <div class="section-container about-grid">
+        
+        <!-- Left Column: Bio & Links -->
+        <div class="about-info-col">
+          <h2 class="about-heading">Hello,<br>I'm Pavan !</h2>
+          <div class="title-badge-container">
+            <span class="role-pill">Full Stack Web Developer / Software Developer</span>
+          </div>
+          <p class="about-bio">
+            I am a B.Tech Artificial Intelligence & Machine Learning graduate/developer focused on building modern web applications and backend systems. My primary development experience is with Java, React, JavaScript, Spring Boot, Node.js, MySQL, MongoDB, HTML, CSS, Git, and GitHub. I have worked on frontend applications, REST APIs, database-driven applications, authentication systems, learning platforms, HR management systems, and full-stack projects.
+          </p>
+
+          <!-- Development Areas Tags -->
+          <div class="dev-areas-group">
+            <h4 class="dev-areas-title">Development Areas:</h4>
+            <div class="dev-areas-pills">
+              <span class="area-pill">Frontend Development</span>
+              <span class="area-pill">Backend Development</span>
+              <span class="area-pill">Full Stack Development</span>
+              <span class="area-pill">Java Development</span>
+              <span class="area-pill">Spring Boot Development</span>
+              <span class="area-pill">React Development</span>
+              <span class="area-pill">REST API Development</span>
+              <span class="area-pill">Database Development</span>
+              <span class="area-pill">Authentication & Authorization</span>
+              <span class="area-pill">Responsive Web Development</span>
+              <span class="area-pill">UI Development</span>
+              <span class="area-pill">API Integration</span>
+              <span class="area-pill">Git/GitHub Version Control</span>
+            </div>
+          </div>
+
+          <a href="https://github.com/PavanYendluru" target="_blank" rel="noreferrer" class="linkedin-pill-btn">
+            <span class="search-icon">🔍</span>
+            <span class="linkedin-text">github.com/PavanYendluru</span>
+          </a>
+        </div>
+
+        <!-- Right Column: Profile Frame & Contact Overlay -->
+        <div class="about-visual-col">
+          <div class="portrait-card-frame">
+            <!-- Floating Badges -->
+            <div class="floating-badge badge-date">2022 – 2026</div>
+            <div class="floating-badge badge-origin">B.Tech AI & ML</div>
+
+            <!-- Overlaid Dark Contact Card -->
+            <div class="contact-card" id="contact-card">
+              <h3 class="contact-title">Profile & Contact</h3>
+              <ul class="contact-list">
+                <li>
+                  <span class="icon">👤</span>
+                  <span><strong>Pavan Yendluru</strong></span>
+                </li>
+                <li>
+                  <span class="icon">🎓</span>
+                  <span>Parvatha Reddy Babul Reddy Visvodaya Institute of Technology and Science, Kavali</span>
+                </li>
+                <li>
+                  <span class="icon">📍</span>
+                  <span>Kavali, Nellore District, A.P.</span>
+                </li>
+                <li>
+                  <span class="icon">💻</span>
+                  <a href="https://github.com/PavanYendluru" target="_blank" rel="noreferrer">github.com/PavanYendluru</a>
+                </li>
+                <li>
+                  <span class="icon">🎯</span>
+                  <span>Full Stack / Software Development</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. EXPERIENCE & EDUCATION SECTION -->
+    <section class="resume-section" id="experience">
+      <div class="resume-banner-text" aria-hidden="true">
+        <span>EXPERIENCE</span>
+        <span>EDUCATION</span>
+      </div>
+
+      <div class="section-container resume-grid">
+        
+        <!-- Left Column: Education & Experience -->
+        <div class="resume-left-col">
+          
+          <!-- Education Block -->
+          <div class="education-block">
+            <h3 class="section-subtitle subtitle-education">Education</h3>
+            <ul class="timeline-list">
+              <li class="timeline-item">
+                <span class="timeline-bullet">✦</span>
+                <div class="timeline-content">
+                  <span class="timeline-year">2022 – 2026</span>
+                  <h4 class="timeline-place">Parvatha Reddy Babul Reddy Visvodaya Institute of Technology and Science</h4>
+                  <p class="timeline-degree">B.Tech in Artificial Intelligence & Machine Learning</p>
+                  <p class="timeline-desc">Kavali, Nellore District</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Professional Experience Card -->
+          <div class="experience-card">
+            <h3 class="experience-title">Experience</h3>
+            <ul class="experience-timeline">
+              <li class="exp-item">
+                <span class="exp-bullet">✦</span>
+                <div class="exp-content">
+                  <div class="exp-header">
+                    <span class="exp-year">Internship</span>
+                    <strong class="exp-role">Software Trainee / Intern</strong>
+                  </div>
+                  <h4 class="exp-company">Orchasp</h4>
+                  <p class="exp-workarea"><strong>Work Area:</strong> Software Development</p>
+                  <p class="exp-desc">
+                    React frontend development, HRMS application development, building reusable UI components, forms and validation, dashboard interfaces, API/frontend integration, Git/GitHub workflow, and improving full-stack development skills.
+                  </p>
+                  <p class="exp-tech"><strong>Primary Technologies:</strong> React.js, JavaScript, HTML, CSS, Git, GitHub, UI development</p>
+                </div>
+              </li>
+            </ul>
+
+            <!-- Tags in Experience Card -->
+            <div class="card-tags">
+              <span class="tag-pill">#React.js</span>
+              <span class="tag-pill">#HRMS</span>
+              <span class="tag-pill">#ReusableComponents</span>
+              <span class="tag-pill">#FormsValidation</span>
+              <span class="tag-pill">#GitWorkflow</span>
+              <span class="tag-pill">#FullStack</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Architecture Profiles -->
+        <div class="resume-right-col">
+          <div class="skills-block">
+            <h3 class="section-subtitle subtitle-skills">Architecture Focus</h3>
+
+            <!-- Backend Profile Card -->
+            <div class="profile-spec-card">
+              <h4 class="spec-card-title">Backend Architecture Profile</h4>
+              <p class="spec-card-desc">
+                Engineered with <strong>Java</strong> and <strong>Spring Boot</strong> focusing on REST API development, MySQL, JPA/Hibernate, Spring Security, and JWT.
+              </p>
+              <ul class="spec-list">
+                <li>Controller-Service-Repository layered architecture</li>
+                <li>DTOs, data validation, and global exception handling</li>
+                <li>Pagination, searching, and filtering APIs</li>
+                <li>Postman API testing & validation</li>
+              </ul>
+            </div>
+
+            <!-- Frontend Profile Card -->
+            <div class="profile-spec-card">
+              <h4 class="spec-card-title">Frontend Architecture Profile</h4>
+              <p class="spec-card-desc">
+                Crafted using <strong>React.js</strong> and <strong>JavaScript</strong> focusing on responsive UI, reusable components, Vite tooling, and client-side routing.
+              </p>
+              <ul class="spec-list">
+                <li>Material UI (MUI), Bootstrap, and Tailwind CSS styling</li>
+                <li>Formik and Yup form handling & client validation</li>
+                <li>Framer Motion and Emotion animations</li>
+                <li>Dashboard development & seamless REST API integration</li>
+              </ul>
+            </div>
+
+            <!-- Database Profile Card -->
+            <div class="profile-spec-card">
+              <h4 class="spec-card-title">Database Profile</h4>
+              <p class="spec-card-desc">
+                <strong>MySQL:</strong> Relational database development, CRUD operations, database connectivity, JPA/Hibernate integration, Spring Boot database integration.
+              </p>
+              <p class="spec-card-desc">
+                <strong>MongoDB:</strong> NoSQL database, MongoDB Server, MongoDB Compass database management and development.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. PROJECTS SECTION -->
+    <section class="projects-section" id="projects">
+      <div class="section-container">
+        <div class="section-header-center">
+          <span class="section-tag">Featured Work</span>
+          <h2 class="section-main-heading">Projects</h2>
+          <p class="section-lead">Key applications and software projects developed across full stack, backend, and frontend.</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project 1: Orchasp HRMS -->
+          <div class="project-card">
+            <div class="project-card-header">
+              <span class="project-type-badge">Full Stack Web Application</span>
+              <h3 class="project-title">Orchasp HRMS</h3>
+            </div>
+            <p class="project-desc">
+              A Human Resource Management System frontend application developed during my work/internship at Orchasp. Focuses on creating a modern HR management interface with authentication, dashboard functionality, navigation, reusable UI components, and a structured user experience.
+            </p>
+            <div class="project-key-areas">
+              <strong>Key Areas:</strong> Login, Registration, Form validation, Dashboard, Sidebar navigation, Header, Reusable cards/components, Authentication-related UI, Responsive interface.
+            </div>
+            <div class="project-tech-tags">
+              <span>React.js</span>
+              <span>Vite</span>
+              <span>JavaScript</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Material UI</span>
+              <span>Lucide Icons</span>
+              <span>React Router</span>
+              <span>Formik</span>
+              <span>Yup</span>
+            </div>
+            <div class="project-card-footer">
+              <a href="https://github.com/PavanYendluru/orchasp-hrms-react" target="_blank" rel="noreferrer" class="project-link-btn">
+                <span>View on GitHub</span> ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 2: Learning Platform -->
+          <div class="project-card">
+            <div class="project-card-header">
+              <span class="project-type-badge">Full Stack Learning Platform</span>
+              <h3 class="project-title">Learning Platform / Video Tutorial Platform</h3>
+            </div>
+            <p class="project-desc">
+              A learning and video tutorial platform designed to organize technical learning content based on domains, topics, resources, and learning roadmaps. Allows administrators to manage domains, topics, and resources (YouTube videos, books). Users explore learning content by domain and topic.
+            </p>
+            <div class="project-key-areas">
+              <strong>Core Architecture:</strong> Domain → Topics → Resources → Roadmaps → Learning Progress. Layered Controller-Service-Repository-Entity architecture with JWT authentication, role-based access, bookmarks, search, filtering, and pagination.
+            </div>
+            <div class="project-tech-tags">
+              <span>Java</span>
+              <span>Spring Boot</span>
+              <span>Spring MVC</span>
+              <span>REST APIs</span>
+              <span>Spring Security</span>
+              <span>JWT</span>
+              <span>MySQL</span>
+              <span>JPA/Hibernate</span>
+              <span>React.js</span>
+              <span>YouTube API</span>
+              <span>Postman</span>
+            </div>
+            <div class="project-card-footer">
+              <span class="repo-badge">GitHub: learning-platform-backend</span>
+            </div>
+          </div>
+
+          <!-- Project 3: Employee Management System -->
+          <div class="project-card">
+            <div class="project-card-header">
+              <span class="project-type-badge">Backend / Database Application</span>
+              <h3 class="project-title">Employee Management System</h3>
+            </div>
+            <p class="project-desc">
+              An employee management backend application developed using Java and Spring Boot. Provides REST APIs for managing employee-related data and demonstrates layered backend architecture with controllers, services, repositories, entities, and database integration.
+            </p>
+            <div class="project-key-areas">
+              <strong>Key Concepts:</strong> REST APIs, CRUD operations, MySQL database integration, Spring Boot, JPA/Hibernate, layered architecture, Postman API testing.
+            </div>
+            <div class="project-tech-tags">
+              <span>Java</span>
+              <span>Spring Boot</span>
+              <span>REST API</span>
+              <span>MySQL</span>
+              <span>JPA/Hibernate</span>
+              <span>Postman</span>
+            </div>
+            <div class="project-card-footer">
+              <a href="https://github.com/PavanYendluru/employee-management-backend" target="_blank" rel="noreferrer" class="project-link-btn">
+                <span>View on GitHub</span> ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 4: Login & Registration System -->
+          <div class="project-card">
+            <div class="project-card-header">
+              <span class="project-type-badge">Frontend Application</span>
+              <h3 class="project-title">Login & Registration System</h3>
+            </div>
+            <p class="project-desc">
+              A React-based login and registration application focused on form handling and client-side validation.
+            </p>
+            <div class="project-key-areas">
+              <strong>Features:</strong> Login form, Registration form, Input validation, Form handling, Yup validation, Error messages, User-friendly interface.
+            </div>
+            <div class="project-tech-tags">
+              <span>React.js</span>
+              <span>JavaScript</span>
+              <span>Formik</span>
+              <span>Yup</span>
+              <span>HTML</span>
+              <span>CSS</span>
+            </div>
+          </div>
+
+          <!-- Project 5: Portfolio Website -->
+          <div class="project-card">
+            <div class="project-card-header">
+              <span class="project-type-badge">Frontend Web Application</span>
+              <h3 class="project-title">Portfolio Website</h3>
+            </div>
+            <p class="project-desc">
+              A personal developer portfolio designed to showcase my technical skills, projects, development experience, and professional profile.
+            </p>
+            <div class="project-key-areas">
+              <strong>Features:</strong> Personal introduction, Technical skills, Projects, Experience, Contact section, Animations, Responsive design.
+            </div>
+            <div class="project-tech-tags">
+              <span>React.js</span>
+              <span>JavaScript</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Framer Motion</span>
+              <span>Emotion</span>
+            </div>
+          </div>
+
+          <!-- Project 6: Counter Application -->
+          <div class="project-card">
+            <div class="project-card-header">
+              <span class="project-type-badge">React Practice Project</span>
+              <h3 class="project-title">Counter Application</h3>
+            </div>
+            <p class="project-desc">
+              A simple React application created to practice component-based development and state management.
+            </p>
+            <div class="project-key-areas">
+              <strong>Concepts Practiced:</strong> React components, State, Event handling, UI updates.
+            </div>
+            <div class="project-tech-tags">
+              <span>React.js</span>
+              <span>JavaScript</span>
+              <span>HTML</span>
+              <span>CSS</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. TECHNICAL SKILLS SECTION (Organized by Section 13 Categories) -->
+    <section class="skills-section" id="skills">
+      <div class="section-container">
+        <div class="section-header-center">
+          <span class="section-tag">Capabilities</span>
+          <h2 class="section-main-heading">Technical Skills</h2>
+          <p class="section-lead">Technologies and development tools used across projects and development experience.</p>
+        </div>
+
+        <div class="skills-categories-grid">
+
+          <!-- Category 1: Languages -->
+          <div class="skill-category-card">
+            <h3 class="category-heading">Languages</h3>
+            <div class="category-tags">
+              <span class="skill-chip chip-language">C</span>
+              <span class="skill-chip chip-language">Java</span>
+              <span class="skill-chip chip-language">JavaScript</span>
+            </div>
+          </div>
+
+          <!-- Category 2: Frontend -->
+          <div class="skill-category-card">
+            <h3 class="category-heading">Frontend Development</h3>
+            <div class="category-tags">
+              <span class="skill-chip">HTML5</span>
+              <span class="skill-chip">CSS3</span>
+              <span class="skill-chip">JavaScript</span>
+              <span class="skill-chip">React.js</span>
+              <span class="skill-chip">React Router DOM</span>
+              <span class="skill-chip">Vite</span>
+              <span class="skill-chip">Bootstrap</span>
+              <span class="skill-chip">Tailwind CSS</span>
+              <span class="skill-chip">Material UI (MUI)</span>
+              <span class="skill-chip">Formik</span>
+              <span class="skill-chip">Yup</span>
+              <span class="skill-chip">Framer Motion</span>
+              <span class="skill-chip">Emotion</span>
+            </div>
+          </div>
+
+          <!-- Category 3: Backend -->
+          <div class="skill-category-card">
+            <h3 class="category-heading">Backend Development</h3>
+            <div class="category-tags">
+              <span class="skill-chip chip-backend">Java</span>
+              <span class="skill-chip chip-backend">Spring Boot</span>
+              <span class="skill-chip chip-backend">Spring MVC</span>
+              <span class="skill-chip chip-backend">REST APIs</span>
+              <span class="skill-chip chip-backend">Node.js</span>
+              <span class="skill-chip chip-backend">Express.js</span>
+            </div>
+          </div>
+
+          <!-- Category 4: Databases -->
+          <div class="skill-category-card">
+            <h3 class="category-heading">Databases</h3>
+            <div class="category-tags">
+              <span class="skill-chip chip-db">MySQL</span>
+              <span class="skill-chip chip-db">MongoDB</span>
+              <span class="skill-chip chip-db">MongoDB Compass</span>
+            </div>
+          </div>
+
+          <!-- Category 5: Security -->
+          <div class="skill-category-card">
+            <h3 class="category-heading">Security & Authentication</h3>
+            <div class="category-tags">
+              <span class="skill-chip chip-sec">JWT Authentication</span>
+              <span class="skill-chip chip-sec">Spring Security</span>
+              <span class="skill-chip chip-sec">Role-based Access</span>
+              <span class="skill-chip chip-sec">User/Admin Authentication</span>
+              <span class="skill-chip chip-sec">Form Validation</span>
+              <span class="skill-chip chip-sec">API Authorization</span>
+            </div>
+          </div>
+
+          <!-- Category 6: Tools & Platforms -->
+          <div class="skill-category-card">
+            <h3 class="category-heading">Tools & Platforms</h3>
+            <div class="category-tags">
+              <span class="skill-chip">Git</span>
+              <span class="skill-chip">GitHub</span>
+              <span class="skill-chip">VS Code</span>
+              <span class="skill-chip">Eclipse</span>
+              <span class="skill-chip">Spring Tool Suite (STS)</span>
+              <span class="skill-chip">Postman</span>
+              <span class="skill-chip">Figma</span>
+              <span class="skill-chip">npm</span>
+              <span class="skill-chip">Vite</span>
+              <span class="skill-chip">MySQL Server</span>
+            </div>
+          </div>
+
+          <!-- Category 7: Libraries / Frameworks -->
+          <div class="skill-category-card">
+            <h3 class="category-heading">Libraries & Frameworks</h3>
+            <div class="category-tags">
+              <span class="skill-chip">React</span>
+              <span class="skill-chip">Spring Boot</span>
+              <span class="skill-chip">JPA/Hibernate</span>
+              <span class="skill-chip">Formik</span>
+              <span class="skill-chip">Yup</span>
+              <span class="skill-chip">Framer Motion</span>
+              <span class="skill-chip">Emotion</span>
+            </div>
+          </div>
+
+          <!-- Category 8: Currently Improving -->
+          <div class="skill-category-card growth-card">
+            <h3 class="category-heading">Currently Improving & Growth</h3>
+            <div class="category-tags">
+              <span class="skill-chip chip-growth">Node.js</span>
+              <span class="skill-chip chip-growth">Advanced Backend Development</span>
+              <span class="skill-chip chip-growth">Spring Boot</span>
+              <span class="skill-chip chip-growth">Full Stack Development</span>
+              <span class="skill-chip chip-growth">AI and Agentic AI technologies</span>
+              <span class="skill-chip chip-growth">Advanced Java</span>
+              <span class="skill-chip chip-growth">Advanced React</span>
+              <span class="skill-chip chip-growth">Backend Architecture</span>
+              <span class="skill-chip chip-growth">REST API Development</span>
+              <span class="skill-chip chip-growth">Authentication & Security</span>
+              <span class="skill-chip chip-growth">Database Design</span>
+              <span class="skill-chip chip-growth">Cloud/DevOps Fundamentals</span>
+              <span class="skill-chip chip-growth">AI Engineering</span>
+              <span class="skill-chip chip-growth">AI Automation</span>
+              <span class="skill-chip chip-growth">AI-powered Applications</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. DEVELOPMENT WORKFLOW & API EXPERIENCE -->
+    <section class="workflow-section" id="workflow">
+      <div class="section-container">
+        
+        <div class="workflow-box">
+          <h3 class="workflow-title">Development Workflow</h3>
+          <p class="workflow-desc">Standard methodology executed across projects:</p>
+          <div class="workflow-steps">
+            <div class="flow-step"><span class="step-num">01</span> Requirements</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><span class="step-num">02</span> Planning</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><span class="step-num">03</span> UI Development</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><span class="step-num">04</span> Backend Development</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><span class="step-num">05</span> Database Integration</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><span class="step-num">06</span> API Development</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><span class="step-num">07</span> API Testing</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><span class="step-num">08</span> Frontend/API Integration</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><span class="step-num">09</span> Validation</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><span class="step-num">10</span> Git/GitHub</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><span class="step-num">11</span> Testing</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step"><span class="step-num">12</span> Deployment / Improvement</div>
+          </div>
+        </div>
+
+        <div class="api-exp-box">
+          <h3 class="workflow-title">API Development Experience</h3>
+          <p class="workflow-desc">Hands-on experience developing and testing REST APIs with Spring Boot and Node.js:</p>
+          <div class="api-tags-cloud">
+            <span class="api-pill">REST API Creation</span>
+            <span class="api-pill">CRUD APIs</span>
+            <span class="api-pill">Authentication APIs</span>
+            <span class="api-pill">Registration APIs</span>
+            <span class="api-pill">Login APIs</span>
+            <span class="api-pill">Domain APIs</span>
+            <span class="api-pill">Topic APIs</span>
+            <span class="api-pill">Resource APIs</span>
+            <span class="api-pill">Bookmark APIs</span>
+            <span class="api-pill">Progress APIs</span>
+            <span class="api-pill">Roadmap APIs</span>
+            <span class="api-pill">Dashboard APIs</span>
+            <span class="api-pill">Search APIs</span>
+            <span class="api-pill">Filtering & Pagination</span>
+            <span class="api-pill">API Validation & Exception Handling</span>
+            <span class="api-pill">Postman Testing</span>
+          </div>
+        </div>
+
+        <div class="git-exp-box">
+          <h3 class="workflow-title">Git & GitHub Version Control</h3>
+          <p class="workflow-desc">Proficient in version control practices:</p>
+          <div class="git-tags-cloud">
+            <span class="git-pill">Repository Creation</span>
+            <span class="git-pill">Git Initialization</span>
+            <span class="git-pill">Add / Commit</span>
+            <span class="git-pill">Branching</span>
+            <span class="git-pill">Pull / Push</span>
+            <span class="git-pill">Remote Repositories</span>
+            <span class="git-pill">GitHub Project Management</span>
+            <span class="git-pill">Source Code Version Control</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. FOOTER / CONTACT SUMMARY -->
+    <footer class="footer-details-section">
+      <div class="section-container footer-details-grid">
+        
+        <div class="footer-col">
+          <h3 class="footer-section-title">Pavan Yendluru</h3>
+          <p class="footer-role">Full Stack Web Developer / Software Developer</p>
+          <p class="footer-subtext">B.Tech in Artificial Intelligence & Machine Learning (2022–2026)</p>
+          <p class="footer-subtext">PBR VITS, Kavali, Nellore District</p>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-section-title">Key Development Focus</h3>
+          <p class="footer-subtext">Java • Spring Boot • React.js • REST APIs • MySQL • MongoDB • Full Stack Applications</p>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-section-title">Links</h3>
+          <div class="footer-links-list">
+            <a href="https://github.com/PavanYendluru" target="_blank" rel="noreferrer" class="footer-link">
+              GitHub: github.com/PavanYendluru ↗
+            </a>
+            <a href="https://github.com/PavanYendluru/orchasp-hrms-react" target="_blank" rel="noreferrer" class="footer-link">
+              Orchasp HRMS Repository ↗
+            </a>
+            <a href="https://github.com/PavanYendluru/employee-management-backend" target="_blank" rel="noreferrer" class="footer-link">
+              Employee Management Repository ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Bottom Scrub Progress Indicator -->
+  <div class="scrub-meter" id="scrub-meter" aria-hidden="true">
+    <div class="scrub-fill" id="scrub-fill"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

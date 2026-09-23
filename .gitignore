@@ -1,0 +1,12 @@
+# Node modules & OS files
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Heavy archives (GitHub has a 100MB file limit)
+video_frames_30fps_png.zip
+*.zip
+
+# Local server & development artifacts
+Screenshot*.*
+.vercel/
