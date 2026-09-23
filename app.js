@@ -80,11 +80,11 @@ function drawFrame(frameIndex, forceRedraw = false) {
     offsetYRatio = 0.48;
   } else {
     // Mobile Portrait viewports (tall & narrow phones)
-    // Scale character to occupy a prominent ~58% of available height
-    const targetHScale = (availableH / imgH) * 0.58;
-    const maxWScale = (cWidth / imgW) * 2.2;
-    scale = Math.min(targetHScale, maxWScale);
-    offsetYRatio = 0.42;
+    // Scale character to fit comfortably in mobile portrait without cutting off head or obstructing face
+    const fitScaleH = (availableH / imgH) * 0.58;
+    const fitScaleW = (cWidth / imgW) * 1.55;
+    scale = Math.min(fitScaleH, fitScaleW);
+    offsetYRatio = 0.36; // Position comfortably below top header so face is centered in the open window
   }
 
   const drawW = imgW * scale;
@@ -157,8 +157,9 @@ function loadRemainingFrames() {
     queue.push(i);
   }
 
-  // Preload in batches of 16 concurrent requests for maximum HTTP/2 throughput
-  const CONCURRENT_DOWNLOADS = 16;
+  // Concurrency tuned: 4 for mobile to avoid socket/memory thrashing, 10 for desktop
+  const isMobile = window.innerWidth <= 768;
+  const CONCURRENT_DOWNLOADS = isMobile ? 4 : 10;
   let activeDownloads = 0;
 
   function loadNext() {
@@ -290,10 +291,20 @@ window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeMobileNav();
 });
 
-// Event Listeners
+// Event Listeners with mobile URL bar scroll stabilization
+let lastWidth = window.innerWidth;
+let lastHeight = window.innerHeight;
+
 window.addEventListener('resize', () => {
-  resizeCanvas();
-  if (window.innerWidth > 900 && navMenu && navMenu.classList.contains('nav-open')) {
+  const currentW = window.innerWidth;
+  const currentH = window.innerHeight;
+  // Ignore minor vertical height fluctuations caused by mobile address bars collapsing
+  if (currentW !== lastWidth || Math.abs(currentH - lastHeight) > 120) {
+    lastWidth = currentW;
+    lastHeight = currentH;
+    resizeCanvas();
+  }
+  if (currentW > 900 && navMenu && navMenu.classList.contains('nav-open')) {
     closeMobileNav();
   }
 }, { passive: true });
