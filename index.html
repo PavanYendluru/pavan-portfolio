@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Pavan Yendluru — Full Stack Web Developer</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,16 +30,28 @@
       <a href="#hero" class="brand-logo">
         <span class="sparkle-icon">✦</span> Pavan Yendluru
       </a>
-      <nav class="nav-links">
+      
+      <!-- Mobile Menu Toggle Button -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+      </button>
+
+      <!-- Navigation Links (Responsive Desktop row & Mobile drawer) -->
+      <nav class="nav-links" id="nav-menu">
         <a href="#about" class="nav-link">About</a>
         <a href="#experience" class="nav-link">Experience</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#skills" class="nav-link">Skills</a>
         <a href="#workflow" class="nav-link">Workflow</a>
-        <a href="#contact-card" class="cta-pill-btn">Get in touch!</a>
+        <a href="#contact-card" class="cta-pill-btn nav-cta">Get in touch!</a>
       </nav>
     </div>
   </header>
+
+  <!-- Mobile Nav Backdrop Overlay -->
+  <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
 
   <!-- Main Content Flow -->
   <main class="page-content">

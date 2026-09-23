@@ -14,6 +14,9 @@ const loadPercentage = document.getElementById('load-percentage');
 const progressBar = document.getElementById('progress-bar');
 const scrubFill = document.getElementById('scrub-fill');
 const topNav = document.getElementById('top-nav');
+const navToggle = document.getElementById('nav-toggle');
+const navMenu = document.getElementById('nav-menu');
+const navBackdrop = document.getElementById('nav-backdrop');
 
 // State
 const images = new Array(FRAME_COUNT);
@@ -40,7 +43,7 @@ function resizeCanvas() {
   drawFrame(Math.round(currentFrame), true);
 }
 
-// Draw frame: pushed backwards with breathing room for clear face visibility
+// Draw frame: pushed backwards with adaptive breathing room for all device viewports
 function drawFrame(frameIndex, forceRedraw = false) {
   if (frameIndex === lastDrawnFrame && !forceRedraw) return;
 
@@ -56,19 +59,41 @@ function drawFrame(frameIndex, forceRedraw = false) {
   ctx.fillStyle = '#FDC810';
   ctx.fillRect(0, 0, cWidth, cHeight);
 
-  // Scaled containment with breathing room & header clearance
-  const headerOffset = Math.round(cHeight * 0.09); // Space for sticky top navigation
-  const availableH = cHeight - headerOffset;
-  const fitScale = Math.min(cWidth / imgW, availableH / imgH);
-  // Scale factor 0.77 keeps the character proportional and pushed back
-  const scale = fitScale * 0.77;
+  // Viewport ratio analysis
+  const headerOffset = Math.round(cHeight * 0.08); // Space for sticky top navigation
+  const availableH = Math.max(100, cHeight - headerOffset);
+  const aspect = cWidth / cHeight;
+
+  let scale;
+  let offsetYRatio = 0.52;
+
+  if (aspect >= 1.15) {
+    // Desktop / Landscape viewports (wide 16:9, 16:10, ultrawide)
+    const fitScale = Math.min(cWidth / imgW, availableH / imgH);
+    scale = fitScale * 0.77;
+    offsetYRatio = 0.52;
+  } else if (aspect >= 0.75) {
+    // Tablet / Square viewports (iPad portrait 3:4, 4:3)
+    const fitScaleH = (availableH / imgH) * 0.68;
+    const fitScaleW = (cWidth / imgW) * 1.15;
+    scale = Math.min(fitScaleH, fitScaleW);
+    offsetYRatio = 0.48;
+  } else {
+    // Mobile Portrait viewports (tall & narrow phones)
+    // Scale character to occupy a prominent ~58% of available height
+    const targetHScale = (availableH / imgH) * 0.58;
+    const maxWScale = (cWidth / imgW) * 2.2;
+    scale = Math.min(targetHScale, maxWScale);
+    offsetYRatio = 0.42;
+  }
+
   const drawW = imgW * scale;
   const drawH = imgH * scale;
 
   // Centered horizontally
   const offsetX = (cWidth - drawW) / 2;
-  // Positioned comfortably down below the header so the hair is 100% visible on first load
-  const offsetY = headerOffset + Math.max(30, (availableH - drawH) * 0.52);
+  // Positioned comfortably down below the header so the hair and face are clearly visible
+  const offsetY = headerOffset + Math.max(20, (availableH - drawH) * offsetYRatio);
 
   // Draw image
   ctx.drawImage(img, offsetX, offsetY, drawW, drawH);
@@ -226,8 +251,52 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Mobile navigation drawer controller
+function openMobileNav() {
+  if (!navToggle || !navMenu) return;
+  navToggle.classList.add('active');
+  navToggle.setAttribute('aria-expanded', 'true');
+  navMenu.classList.add('nav-open');
+  if (navBackdrop) navBackdrop.classList.add('active');
+  document.body.classList.add('nav-locked');
+}
+
+function closeMobileNav() {
+  if (!navToggle || !navMenu) return;
+  navToggle.classList.remove('active');
+  navToggle.setAttribute('aria-expanded', 'false');
+  navMenu.classList.remove('nav-open');
+  if (navBackdrop) navBackdrop.classList.remove('active');
+  document.body.classList.remove('nav-locked');
+}
+
+if (navToggle) {
+  navToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = navMenu && navMenu.classList.contains('nav-open');
+    if (isOpen) {
+      closeMobileNav();
+    } else {
+      openMobileNav();
+    }
+  });
+}
+
+if (navBackdrop) {
+  navBackdrop.addEventListener('click', closeMobileNav);
+}
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeMobileNav();
+});
+
 // Event Listeners
-window.addEventListener('resize', resizeCanvas, { passive: true });
+window.addEventListener('resize', () => {
+  resizeCanvas();
+  if (window.innerWidth > 900 && navMenu && navMenu.classList.contains('nav-open')) {
+    closeMobileNav();
+  }
+}, { passive: true });
 window.addEventListener('scroll', updateScrollProgress, { passive: true });
 
 // Initial boot
